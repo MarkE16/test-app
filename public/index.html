@@ -29,6 +29,29 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      GoogleCharts.load('current', { packages: ['piechart'] });
+      GoogleCharts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        const data = GoogleCharts.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        const options = {
+          title: 'My Daily Activities',
+        };
+
+        const chart = new GoogleCharts.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

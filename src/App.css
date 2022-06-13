@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin: 40px;
 }
 
 .App-logo {
@@ -28,6 +29,12 @@
   color: #61dafb;
 }
 
+.subtitle {
+  display: flex;
+  font-size: 30px;
+  margin: 30px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +42,60 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.sidebar-container {
+  display: flex;
+  width: 100%;
+}
+
+.sideBar {
+  min-width: 400px;
+}
+
+.sideBar-item {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #263fbd;
+  color: white;
+  padding: 35px;
+  font-size: x-large;
+  cursor: pointer;
+}
+
+.sideBar-item:hover {
+  background-color: #1832b6;
+}
+
+.sideBar-item:active {
+  background-color: #0f26a1;
+}
+
+.sideBar-item-modal {
+  display: flex;
+  background-color: #0d2abb;
+  color: white;
+  padding: 35px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  cursor: pointer;
+}
+
+.sideBar-item-modal:hover {
+  background-color: #122ba6;
+}
+
+.sideBar-item-modal > button {
+  margin: 10px;
+}
+
+/* The gray part of the bar. */
+.container {
+  background-color: rgb(200, 199, 199);
+  width: 90%;
+  height: 15px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 5px #000;
 }
