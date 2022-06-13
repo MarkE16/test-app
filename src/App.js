@@ -49,6 +49,7 @@ function App() {
         <PieChart1 />
       </div>
       <div>
+      <Timer timer={time} setTimer={setTime} timerPaused={timePaused} setTimerPaused={setTimePaused} goalTime={endTime} setGoalTime={setEndTime}/>
         <p className='subtitle'>SideBar</p>
         <Sidebar />
       </div>
