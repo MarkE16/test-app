@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { LineChart,
 	Line, 
-	Tooltip
+	Tooltip,
+  ResponsiveContainer
 } from "recharts"
 import "./App.css";
 import getGraphData from './getGraphData';
@@ -33,15 +34,17 @@ function LineChart1() {
   
   return (
     <div>
-			<LineChart 
-			width={500} 
-			height={250} 
-			margin={{ top: 150, right: 30, left: 20, bottom: 5 }}
-			data={items}
-			>
-				<Line dot={false} type="monotone" dataKey="1. open" stroke="rgb(0, 200, 5)" yAxisId="100" />
-				<Tooltip content={<CustomTooltip data={items} /> }/>
-			</LineChart>
+      <ResponsiveContainer>
+        <LineChart 
+        width={500} 
+        height={250} 
+        margin={{ top: 150, right: 30, left: 20, bottom: 5 }}
+        data={items}
+        >
+          <Line dot={false} type="monotone" dataKey="1. open" stroke="rgb(0, 200, 5)" yAxisId="100" />
+          <Tooltip content={<CustomTooltip data={items} /> }/>
+        </LineChart>
+      </ResponsiveContainer>
 		</div>
   )
 }

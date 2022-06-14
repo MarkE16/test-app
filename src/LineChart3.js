@@ -25,8 +25,8 @@ function LineChart3() {
         <LineChart
         width={500}
         height={250}
-        data={items}
         margin={{ top: 50, right: 30, left: 20, bottom: 5 }}
+        data={items}
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="1. open"/>
