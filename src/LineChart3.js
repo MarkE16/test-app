@@ -20,11 +20,11 @@ function LineChart3() {
   }, [])
 
   return (
-    <div style={{ width: "700px", height: "600px" }}>
+    <div className='graph-container'>
       <ResponsiveContainer>
         <LineChart
-        width={500}
-        height={250}
+        width="100%"
+        height="100%"
         data={items}
         margin={{ top: 50, right: 30, left: 20, bottom: 5 }}
         >

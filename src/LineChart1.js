@@ -32,10 +32,10 @@ function LineChart1() {
   }, [])
   
   return (
-    <div>
+    <div className='graph-container'>
 			<LineChart 
-			width={500} 
-			height={250} 
+			width="100%" 
+			height="100%"
 			margin={{ top: 150, right: 30, left: 20, bottom: 5 }}
 			data={items}
 			>

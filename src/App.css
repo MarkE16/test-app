@@ -1,4 +1,5 @@
 .App {
+  display: block;
   text-align: center;
   margin: 40px;
   height: 100%;
@@ -89,6 +90,8 @@
   justify-content: center;
   align-items: center;
   font-size: x-large;
+  border-top-right-radius: 5%;
+  border-bottom-right-radius: 5%;
 }
 
 
@@ -107,4 +110,9 @@
 
 .line {
   white-space: pre-line;
+}
+
+.graph-container {
+  width: 100%;
+  height: 100%;
 }

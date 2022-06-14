@@ -29,6 +29,7 @@ function Sidebar({ timer, setTimer, goalTime }) {
     {title: "Title 3", desc: "Description 3", element: <LineChart3 />, id: 2},
     {title: "Title 4", desc: "Description 4", element: <BarChart1 />, id: 3},
     {title: "Title 5", desc: "Description 5", element: <PieChart1 />, id: 4},
+    {title: "Title 6", desc: "Description 6", element: <PieChart1 />, id: 5},
   ]
 
   const [itemActive, setItemActive] = useState(false);
@@ -46,6 +47,7 @@ function Sidebar({ timer, setTimer, goalTime }) {
         }
       </div>
       { itemActive && <Modal setModalOpen={setItemActive} item={item} itemArr={sidebarItems} setItem={setItem} timer={timer} setTimer={setTimer} goalTime={goalTime} /> }
+    
     </div>
   )
 }

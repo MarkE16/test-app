@@ -1,60 +1,37 @@
 import './App.css';
 import { useState } from "react";
-import LineChart1 from './LineChart1';
-import LineChart2 from './LineChart2';
-import LineChart3 from './LineChart3';
-import BarChart1 from './BarChart1';
-import { Timer } from "./Timer"
 import Sidebar from './Sidebar';
 import Progress from './Progress';
-import PieChart1 from './PieChart1';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom"
+import Home from './locations/Home';
+
+function Intro() {
+  return (
+    <div className='App'>
+      <h1>Hello, ShipStation!</h1>
+      <img src={require("../src/assets/shipstation.png")} alt="Loading..." />
+      <p>Press the button below to go to the dashboard.</p>
+      <Link to="/home"><button>Go to Home</button></Link>
+    </div>
+  )
+}
 
 function App() {
 
-  const [endTime, setEndTime] = useState(15);
-  const [time, setTime] = useState(0);
-  const [timePaused, setTimePaused] = useState(false);
-
   return (
-    <div className="App">
-      <div style={{ height: "100%" }}>
-        <Sidebar timer={time} setTimer={setTime} goalTime={endTime}/>
-        <Progress timer={time} goalTime={endTime} />
-      </div>
-      {/* <div>
-        <p className='subtitle'>LineChart 1</p>
-        <LineChart1 />
-      </div>
+    <Router>
       <div>
-        <p className='subtitle'>Line Graph 2</p>
-        <LineChart2 />
+        <Routes>
+          <Route path='/' element={ <Intro /> } />
+          <Route path="/home" element={ <Home /> } />
+        </Routes>
       </div>
-      <div>
-        <p className='subtitle'>Line Graph 3</p>
-        <LineChart3 />
-      </div>
-      <div>
-        <p className='subtitle'>BarChart1</p>
-        <BarChart1 />
-      </div>
-      <div>
-        <p className='subtitle'>Timer</p>
-        <Timer timer={time} setTimer={setTime} timerPaused={timePaused} setTimerPaused={setTimePaused} goalTime={endTime} setGoalTime={setEndTime}/>
-      </div>
-      <div>
-        <p className='subtitle'>Progress Bar</p>
-        <Progress timer={time} goalTime={endTime}/>
-      </div>
-      <div>
-        <p className='subtitle'>Pie Chart</p>
-        <PieChart1 />
-      </div>
-      <div>
-      <Timer timer={time} setTimer={setTime} timerPaused={timePaused} setTimerPaused={setTimePaused} goalTime={endTime} setGoalTime={setEndTime}/>
-        <p className='subtitle'>SideBar</p>
-        <Sidebar />
-      </div> */}
-    </div>
+    </Router>
   );
 }
 

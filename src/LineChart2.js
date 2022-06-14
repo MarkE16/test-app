@@ -40,13 +40,7 @@ function LineChart2() {
   ];
 
   return (
-    <div
-    style={{ 
-    width: "1100px",
-    height: "600px",
-    backgroundColor: "black"
-    }}
-    >
+    <div className='graph-container'>
       <ResponsiveContainer>
         <LineChart
         width={500}

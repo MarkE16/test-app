@@ -29,10 +29,10 @@ function BarChart1() {
   ];
 
   return (
-    <div>
+    <div className='graph-container'>
       <BarChart
-      width={300}
-      height={300}
+      width="100%"
+      height="100%"
       data={items}
       margin={{ top: 50, right: 30, left: 20, bottom: 5 }}
       >
