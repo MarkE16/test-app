@@ -5,7 +5,8 @@ import {
   XAxis,
   YAxis,
   Legend,
-  Tooltip
+  Tooltip,
+  ResponsiveContainer
 } from "recharts"
 
 function BarChart1() {
@@ -30,18 +31,20 @@ function BarChart1() {
 
   return (
     <div className='graph-container'>
-      <BarChart
-      width="100%"
-      height="100%"
-      data={items}
-      margin={{ top: 50, right: 30, left: 20, bottom: 5 }}
-      >
-        <Tooltip />
-        <XAxis dataKey="name" />
-        <YAxis dataKey="age" />
-        <Bar dataKey="age" fill="blue"/>
-        <Legend />
-      </BarChart>
+      <ResponsiveContainer>
+        <BarChart
+        width="100%"
+        height="100%"
+        data={items}
+        margin={{ top: 50, right: 30, left: 20, bottom: 5 }}
+        >
+          <Tooltip />
+          <XAxis dataKey="name" />
+          <YAxis dataKey="age" />
+          <Bar dataKey="age" fill="blue"/>
+          <Legend />
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   )
 }
