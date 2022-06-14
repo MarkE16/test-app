@@ -1,25 +1,30 @@
 import React, { useEffect, useState } from 'react'
+import Progress from './Progress';
 import { Timer } from './Timer';
 
-// const changeCard = (method="add") => {
-//   if (method === "add") {
-//     return setItem(items[id >= (items.length - 1) ? 0 : id + 1])
-//   }
-//   return setItem(items[id < 1 ? (items.length - 1) : id - 1])
-// }
-
-function Modal({ open, setModalOpen, item, setItem, itemArr }) {
+function Modal({ setModalOpen, item, setItem, itemArr }) {
   const items = itemArr;
-  var { desc, id } = item;
+  const [time, setTime] = useState(0);
+  const [endTime, setEndTime] = useState(15);
+  var { title, desc, id } = item;
+
+  const msg = `${title} \n ${desc}`
 
   useEffect(() => {
-    if (open) setTimeout(() => setItem(items[id >= (items.length - 1) ? 0 : id + 1]), 15000)
+    const activeItem = document.getElementById(`sidebar-item${id}`)
+    var color = activeItem.style.backgroundColor;
+    const interval = setTimeout(() => setItem(items[id >= (items.length - 1) ? 0 : id + 1]), (endTime * 1000))
+    return () => clearInterval(interval)
   }, [item])
 
   return (
-    <div className='sideBar-item-modal'>
-      <span>{desc}</span>
-      <button onClick={() => setModalOpen(false)}>Close</button>
+    <div>
+      <div className='sideBar-item-modal'>
+        <span className='line'>{msg}</span>
+        <button onClick={() => setModalOpen(false)}>Close</button>
+      </div>
+      <Timer timer={time} setTimer={setTime} goalTime={endTime} />
+      <Progress timer={time} goalTime={endTime} />
     </div>
   )
 }

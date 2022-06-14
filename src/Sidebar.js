@@ -17,26 +17,19 @@ const SidebarItem = ({ item, setItemOn, setItem}) => {
   )
 }
 
-function Sidebar() {
+function Sidebar({ timer, goalTime }) {
   const sidebarItems = [
-    {title: "Cool stuff", desc: "News about cool stuff",  id: 0},
-    {title: "More News", desc: "News about more news",  id: 1},
-    {title: "Some more News", desc: "News about some more news",  id: 2},
-    {title: "Even more News", desc: "News about even more news",  id: 3},
-    {title: "Awesome News", desc: "News about awesome news",  id: 4},
+    {title: "Title 1", desc: "Description 1",  id: 0},
+    {title: "Title 2", desc: "Description 2",  id: 1},
+    {title: "Title 3", desc: "Description 3",  id: 2},
+    {title: "Title 4", desc: "Description 4",  id: 3},
+    {title: "Title 5", desc: "Description 5",  id: 4},
   ]
 
   const [itemActive, setItemActive] = useState(false);
   const [item, setItem] = useState();
 
-  useEffect(() => {
-    if (item) {
-      const sidebar = document.getElementById("sideBar-item");
-      sidebar.addEventListener("click", () => document.getElementById(`sidebar-item${item.id}`).style.backgroundColor = "red")
-    } else {
-
-    }
-  }, [])
+ 
 
   return (
     <div className='sidebar-container'>
@@ -47,7 +40,7 @@ function Sidebar() {
           })
         }
       </div>
-      { itemActive && <Modal open={itemActive} setModalOpen={setItemActive} item={item} itemArr={sidebarItems} setItem={setItem}/> }
+      { itemActive && <Modal setModalOpen={setItemActive} item={item} itemArr={sidebarItems} setItem={setItem} timer={timer} goalTime={goalTime} /> }
     </div>
   )
 }

@@ -8,7 +8,6 @@ import { Timer } from "./Timer"
 import Sidebar from './Sidebar';
 import Progress from './Progress';
 import PieChart1 from './PieChart1';
-import Modal from './Modal';
 
 function App() {
 
@@ -18,9 +17,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Play-ground app</h1>
-      <p>Use this app to 'play around' or test with things!</p>
-      <div>
+      <div style={{ height: "100%" }}>
+        <Sidebar timer={time} goalTime={endTime}/>
+      </div>
+      {/* <div>
         <p className='subtitle'>LineChart 1</p>
         <LineChart1 />
       </div>
@@ -52,7 +52,7 @@ function App() {
       <Timer timer={time} setTimer={setTime} timerPaused={timePaused} setTimerPaused={setTimePaused} goalTime={endTime} setGoalTime={setEndTime}/>
         <p className='subtitle'>SideBar</p>
         <Sidebar />
-      </div>
+      </div> */}
     </div>
   );
 }
