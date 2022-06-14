@@ -18,7 +18,8 @@ function App() {
   return (
     <div className="App">
       <div style={{ height: "100%" }}>
-        <Sidebar timer={time} goalTime={endTime}/>
+        <Sidebar timer={time} setTimer={setTime} goalTime={endTime}/>
+        <Progress timer={time} goalTime={endTime} />
       </div>
       {/* <div>
         <p className='subtitle'>LineChart 1</p>

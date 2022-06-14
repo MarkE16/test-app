@@ -17,7 +17,7 @@ const SidebarItem = ({ item, setItemOn, setItem}) => {
   )
 }
 
-function Sidebar({ timer, goalTime }) {
+function Sidebar({ timer, setTimer, goalTime }) {
   const sidebarItems = [
     {title: "Title 1", desc: "Description 1",  id: 0},
     {title: "Title 2", desc: "Description 2",  id: 1},
@@ -40,7 +40,7 @@ function Sidebar({ timer, goalTime }) {
           })
         }
       </div>
-      { itemActive && <Modal setModalOpen={setItemActive} item={item} itemArr={sidebarItems} setItem={setItem} timer={timer} goalTime={goalTime} /> }
+      { itemActive && <Modal setModalOpen={setItemActive} item={item} itemArr={sidebarItems} setItem={setItem} timer={timer} setTimer={setTimer} goalTime={goalTime} /> }
     </div>
   )
 }

@@ -22,8 +22,6 @@ function Progress({ timer, goalTime }) {
 
   return (
     <>
-
-      <span style={{ color: "white" , textShadow: "1px 1px 0 black", fontSize: 25 }}>{progressLeft}%</span>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
         <div className='container'>
           <div style={progressBar_container} />
