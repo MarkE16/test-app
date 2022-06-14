@@ -18,7 +18,7 @@ function Modal({ setModalOpen, item, setItem, itemArr, timer, setTimer, goalTime
 
   return (
     <div className='sideBar-item-modal'>
-      <span className='line'>{msg}</span>
+      <span className='line'>{desc}</span>
       <button onClick={() => setModalOpen(false)}>Close</button>
       <Timer timer={timer} setTimer={setTimer} goalTime={goalTime} />
     </div>
