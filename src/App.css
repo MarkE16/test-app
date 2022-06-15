@@ -95,10 +95,6 @@
 }
 
 
-.sideBar-item-modal > button {
-  margin: 10px;
-}
-
 /* The gray part of the bar. */
 .container {
   background-color: rgb(200, 199, 199);

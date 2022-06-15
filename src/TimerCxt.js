@@ -3,11 +3,11 @@ import React, { useEffect, useState, useMemo } from "react";
 export const TimerContent = React.createContext({})
 
 const TimerContextProvider = ({ children }) => {
+  const [itemActive, setItemActive] = useState(false);
   const [endTime, setEndTime] = useState(15);
   const [time, setTime] = useState(0);
   const [timePaused, setTimePaused] = useState(false);
 
-  console.log("Progress is running");
   useEffect(() => {
     if (timePaused) return;
     let interval = setInterval(() => {
@@ -19,19 +19,16 @@ const TimerContextProvider = ({ children }) => {
     return () => clearInterval(interval);
   }, [setTime, time, timePaused, endTime])
 
-
-
-
-
   const contextState = useMemo(() => ({
     endTime,
     setEndTime,
     time,
     setTime,
-      timePaused,
-      setTimePaused
-  }), [endTime, setEndTime, time, setTime, timePaused, setTimePaused])
-
+    timePaused,
+    setTimePaused,
+    itemActive,
+    setItemActive
+  }), [endTime, setEndTime, time, setTime, timePaused, setTimePaused, itemActive, setItemActive])
 
   return (
     <TimerContent.Provider value={contextState}>
