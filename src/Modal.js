@@ -16,7 +16,7 @@ function Modal({ item, setItem, itemArr }) {
     setTime(0);
     const interval = setTimeout(() => setItem(items[id >= (items.length - 1) ? 0 : id + 1]), (endTime * 1000))
     return () => clearInterval(interval)
-  }, [item])
+  }, [item, endTime, timePaused])
 
   return (
     <div className='sideBar-item-modal'>

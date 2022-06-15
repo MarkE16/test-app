@@ -8,7 +8,7 @@ function Timer() {
   useEffect(() => {
     if (timePaused) return;
     let interval = setInterval(() => {
-      if (time === endTime) setTime(0); 
+      if (time <= endTime) setTime(0); 
       if (time < endTime) {
         setTime(time + 1);
       }

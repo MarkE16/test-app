@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import { TimerContent } from './TimerCxt';
 
 function Progress() {
-  const { time, endTime, timePaused, setEndTime, itemActive } = useContext(TimerContent);
+  const { time, endTime, timePaused, setTimePaused, setEndTime, itemActive } = useContext(TimerContent);
   const progress = Math.floor((time / endTime) * 100)
   const [progressLeft, setProgressLeft] = useState(0);
 
@@ -30,11 +30,12 @@ function Progress() {
         </div>
       </div>
       <input
-          type="number" 
-          min={1}
-          value={endTime}
-          onChange={t => setEndTime(t.target.value)}
-          />
+      type="number" 
+      min={1}
+      value={endTime}
+      onChange={t => setEndTime(t.target.value)}
+      />
+      <button onClick={() => setTimePaused(!timePaused ? true : false)}>{!timePaused ? "Pause" : "Play" }</button>
     </>
   )
 }
