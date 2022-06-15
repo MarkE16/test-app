@@ -47,6 +47,6 @@ function BarChart1() {
       </ResponsiveContainer>
     </div>
   )
-}
+  }
 
-export default BarChart1;
+export default BarChart1
