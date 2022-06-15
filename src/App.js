@@ -1,7 +1,4 @@
 import './App.css';
-import { useState } from "react";
-import Sidebar from './Sidebar';
-import Progress from './Progress';
 import {
   BrowserRouter as Router,
   Routes,

@@ -19,6 +19,9 @@ function Home() {
           <Link to="/"><button>Back to Intro</button></Link>
           </TimerContextProvider>
         </div>
+        <div>
+          <h1 style={{ textAlign: "center" }}>This is a quote to kepp you motivated</h1>
+        </div>
     </div>
   )
 }
