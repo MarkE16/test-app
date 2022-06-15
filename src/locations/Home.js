@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import Sidebar from '../Sidebar';
 import Progress from '../Progress';
 import { Link } from "react-router-dom"
-import TimerContextProvider from '../TimerCxt';
+import TimerContextProvider, { TimerContent } from '../TimerCxt';
 
 function Home() {
 

@@ -11,6 +11,7 @@ import {
   Routes,
   Route
 } from "react-router-dom"
+import { TimerContent } from './TimerCxt';
 
 const SidebarItem = ({ item, setItemOn, setItem }) => {
   
@@ -37,7 +38,7 @@ function Sidebar() {
     {title: "Title 6", desc: "Description 6", element: <PieChart1 />, id: 5},
   ]
 
-  const [itemActive, setItemActive] = useState(false);
+  const { itemActive, setItemActive } = useContext(TimerContent);
   const [item, setItem] = useState();
  
 
@@ -55,7 +56,7 @@ function Sidebar() {
             })
           }
       </div>
-      { itemActive && <Modal setModalOpen={setItemActive} item={item} itemArr={sidebarItems} setItem={setItem}/> }
+      { itemActive && <Modal item={item} itemArr={sidebarItems} setItem={setItem}/> }
     
     </div>
   )

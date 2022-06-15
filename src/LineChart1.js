@@ -33,9 +33,6 @@ function LineChart1() {
   
   return (
     <div className='graph-container'>
-      {
-        console.log("Hey")
-      }
 			<LineChart 
 			width="100%"
 			height="100%"

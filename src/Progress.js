@@ -2,14 +2,14 @@ import React, { useEffect, useState, useContext } from 'react'
 import { TimerContent } from './TimerCxt';
 
 function Progress() {
-
-  const { time, endTime, timePaused } = useContext(TimerContent);
+  const { time, endTime, timePaused, setEndTime, itemActive } = useContext(TimerContent);
   const progress = Math.floor((time / endTime) * 100)
   const [progressLeft, setProgressLeft] = useState(0);
 
+  console.log("Progress is running!")
   useEffect(() => {
-    if (!timePaused) setProgressLeft(progress)
-  }, [progress])
+    if (!timePaused && itemActive) setProgressLeft(progress)
+  }, [progress, timePaused])
 
   // Actual progress bar.
   const progressBar_container = {
@@ -29,6 +29,12 @@ function Progress() {
           <div style={progressBar_container} />
         </div>
       </div>
+      <input
+          type="number" 
+          min={1}
+          value={endTime}
+          onChange={t => setEndTime(t.target.value)}
+          />
     </>
   )
 }

@@ -1,11 +1,11 @@
 import React, { useEffect, useContext } from 'react'
-import { Timer } from './Timer';
+import Timer from './Timer';
 import { TimerContent } from "./TimerCxt";
 
 function Modal({ item, setItem, itemArr }) {
   const items = itemArr;
   var { title, desc, element, id } = item;
-  const { time, setTime, endTime, timePaused } = useContext(TimerContent)
+  const { setTime, endTime, timePaused } = useContext(TimerContent)
 
   const msg = `${title} \n ${desc}`
 
@@ -22,7 +22,7 @@ function Modal({ item, setItem, itemArr }) {
     <div className='sideBar-item-modal'>
       <h1 className='line'>{msg}</h1>
       <span>{element}</span>
-      <Timer timer={time} setTimer={setTime} goalTime={endTime} timerPaused={timePaused}/>
+      <Timer />
     </div>
   )
 }

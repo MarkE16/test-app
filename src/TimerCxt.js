@@ -3,6 +3,7 @@ import React, { useEffect, useState, useMemo } from "react";
 export const TimerContent = React.createContext({})
 
 const TimerContextProvider = ({ children }) => {
+  const [itemActive, setItemActive] = useState(false);
   const [endTime, setEndTime] = useState(15);
   const [time, setTime] = useState(0);
   const [timePaused, setTimePaused] = useState(false);
@@ -22,9 +23,12 @@ const TimerContextProvider = ({ children }) => {
     endTime,
     setEndTime,
     time,
+    setTime,
     timePaused,
-    setTimePaused
-  }), [endTime, setEndTime, time, timePaused, setTimePaused])
+    setTimePaused,
+    itemActive,
+    setItemActive
+  }), [endTime, setEndTime, time, setTime, timePaused, setTimePaused, itemActive, setItemActive])
 
   return (
     <TimerContent.Provider value={contextState}>
