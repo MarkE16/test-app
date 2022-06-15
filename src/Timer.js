@@ -16,7 +16,7 @@ function Timer() {
     return () => clearInterval(interval);
   }, [setTime, time, timePaused, endTime])
 
-  return <div>{time}</div>
+  // return <div>{time}</div>
 }
 
 export default Timer;
