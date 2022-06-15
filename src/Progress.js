@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import { TimerContent } from './TimerCxt';
 
-function Progress({ timer, goalTime }) {
+function Progress() {
 
-  const progress = Math.floor((timer / goalTime) * 100)
+  const { time, endTime, timePaused } = useContext(TimerContent);
+  const progress = Math.floor((time / endTime) * 100)
   const [progressLeft, setProgressLeft] = useState(0);
 
   useEffect(() => {
-    setProgressLeft(progress)
+    if (!timePaused) setProgressLeft(progress)
   }, [progress])
 
   // Actual progress bar.

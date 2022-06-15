@@ -33,10 +33,13 @@ function LineChart1() {
   
   return (
     <div className='graph-container'>
+      {
+        console.log("Hey")
+      }
 			<LineChart 
-			width="100%" 
+			width="100%"
 			height="100%"
-			margin={{ top: 150, right: 30, left: 20, bottom: 5 }}
+			margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
 			data={items}
 			>
 				<Line dot={false} type="monotone" dataKey="1. open" stroke="rgb(0, 200, 5)" yAxisId="100" />

@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 const Countdown = ({ timer, setTimer, timerPaused, goalTime }) => {
   useEffect(() => {
     if (timerPaused) return;
-    const interval = setInterval(() => {
+    let interval = setInterval(() => {
       if (timer === goalTime) setTimer(0); 
       if (timer < goalTime) {
         setTimer(timer + 1);
@@ -14,8 +14,9 @@ const Countdown = ({ timer, setTimer, timerPaused, goalTime }) => {
   }, [setTimer, timer, timerPaused, goalTime])
 }
 
-function Timer({ timer, setTimer, timerPaused, setTimerPaused, goalTime, setGoalTime }) {
+function Timer({ timer, setTimer, timerPaused, goalTime }) {
 
+  console.log(timerPaused)
   return (
     <div>
       <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly" }}>
