@@ -8,6 +8,9 @@ function Home() {
 
   return (
       <div className="App">
+        <div>
+          <h1 style={{textAlign: "center" }}>This is a title, says something like "Shipstation Dashboard"</h1>
+        </div>
         <div style={{ height: "100%" }}>
           <TimerContextProvider>
             <Sidebar />
