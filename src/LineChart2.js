@@ -53,7 +53,7 @@ function LineChart2() {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey={11} activeDot={{ r: 8 }} stroke="blue"/>
+          <Line type="monotone" dataKey={11} activeDot={{ r: 8 }} stroke="yellow"/>
           <Line type="monotone" dataKey={12} stroke="red"/>
         </LineChart>
       </ResponsiveContainer>

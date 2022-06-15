@@ -61,7 +61,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #263fbd;
+  background-color: #000000;
   color: white;
   padding: 35px;
   font-size: x-large;
@@ -83,7 +83,7 @@
 
 .sideBar-item-modal {
   display: flex;
-  background-color: #0d2abb;
+  background-color: #000000;
   color: white;
   padding: 35px;
   width: 100%;
