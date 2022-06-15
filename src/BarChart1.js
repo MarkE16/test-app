@@ -41,7 +41,7 @@ function BarChart1() {
           <Tooltip />
           <XAxis dataKey="name" />
           <YAxis dataKey="age" />
-          <Bar dataKey="age" fill="blue"/>
+          <Bar dataKey="age" fill="red"/>
           <Legend />
         </BarChart>
       </ResponsiveContainer>
