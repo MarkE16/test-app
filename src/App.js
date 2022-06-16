@@ -6,6 +6,11 @@ import {
   Link
 } from "react-router-dom"
 import Home from './locations/Home';
+import Modal from './Modal';
+
+function Placeholder() {
+  return <div>Hello World!</div>
+}
 
 function Intro() {
   return (
@@ -25,7 +30,9 @@ function App() {
       <div>
         <Routes>
           <Route path='/' element={ <Intro /> } />
-          <Route path="/home/*" element={ <Home /> } />
+          <Route path="home" element={ <Home /> } >
+            <Route path=':id' element={ <Modal /> } />
+          </Route>
         </Routes>
       </div>
     </Router>

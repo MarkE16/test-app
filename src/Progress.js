@@ -6,7 +6,6 @@ function Progress() {
   const progress = Math.floor((time / endTime) * 100)
   const [progressLeft, setProgressLeft] = useState(0);
 
-  console.log("Progress is running!")
   useEffect(() => {
     if (!timePaused && itemActive) setProgressLeft(progress)
   }, [progress, timePaused])
@@ -36,6 +35,10 @@ function Progress() {
       onChange={t => setEndTime(t.target.value)}
       />
       <button onClick={() => setTimePaused(!timePaused ? true : false)}>{!timePaused ? "Pause" : "Play" }</button>
+      <p>
+      Select an item on the sidebar to reveal its contents.
+      If you don't select any for {endTime} seconds, the next item in the sidebar will play.
+      </p>
     </>
   )
 }

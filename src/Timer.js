@@ -4,7 +4,6 @@ import { TimerContent } from './TimerCxt';
 function Timer() {
   const { time, setTime, timePaused, endTime } = useContext(TimerContent);
 
-  console.log("Timer is running!")
   useEffect(() => {
     if (timePaused) return;
     let interval = setInterval(() => {

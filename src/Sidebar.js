@@ -9,18 +9,20 @@ import PieChart1 from "./PieChart1";
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  useNavigate
 } from "react-router-dom"
 import { TimerContent } from './TimerCxt';
 
 const SidebarItem = ({ item, setItemOn, setItem }) => {
-  
+  const nav = useNavigate();
   
   return (
     <>
       <div className='sideBar-item' id={`sidebar-item${item.id}`} onClick={() => {
         setItem(item);
         setItemOn(true);
+        nav(`:${item.id}`, { replace: true })
       }}>
         <p>{item.title}</p>
       </div>
